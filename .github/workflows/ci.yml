@@ -2,7 +2,7 @@ name: CI
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # Runs every 10 minutes
+    - cron: "*/30 * * * *"  # Runs every 10 minutes
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         # Create 9 parallel jobs (9 × 288 daily runs = 2592 installs)
-        instance: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        instance: [1,2]
       # Allow all matrix jobs to run even if one fails
       fail-fast: false
       
